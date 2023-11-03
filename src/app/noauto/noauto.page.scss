@@ -1,0 +1,24 @@
+//noauto.page.scss
+
+#map {
+    height: 300px;
+    width: 100%;
+    margin-top: 16px;
+  }
+  
+  ion-footer {
+    ion-toolbar {
+      background-color: #f0f0f0;
+    }
+  
+    ion-label {
+      text-align: right;
+    }
+
+    capacitor-google-map {
+      display: inline-block;
+      width: 275px;
+      height: 400px;
+    }
+  }
+  
