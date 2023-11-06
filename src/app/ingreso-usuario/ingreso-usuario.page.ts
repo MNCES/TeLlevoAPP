@@ -21,9 +21,12 @@ export class IngresoUsuarioPage {
       contra: this.contra,
     };
 
-    const usuarioValido = await this.apiService.verificarUsuarioExiste(userData.rut);
+    // const usuarioValido = await this.apiService.verificarUsuarioExiste(userData.rut);
+    const usuarioValido = await this.apiService.verificarLogin(userData.rut, userData.contra);
 
-    if (usuarioValido.items.length > 0) {
+    console.log(usuarioValido)
+
+    if (usuarioValido.items[0].cantidad > 0) {
       // El usuario existe en la base de datos, redirige a la vista deseada
       this.router.navigate(['/pagina-inicio']);
     } else {

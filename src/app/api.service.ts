@@ -10,6 +10,7 @@ export class ApiService {
   private apiURL = 'https://g13be4d4999113d-qfojn116enmtuv5h.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/usuario';
   public apiComprobarUsuario = 'https://g13be4d4999113d-qfojn116enmtuv5h.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/recuperarContra/comprobar/'
   private apiModificarContra = 'https://g13be4d4999113d-qfojn116enmtuv5h.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/recuperarContra/modificar'
+  private apiLogin = 'https://g13be4d4999113d-qfojn116enmtuv5h.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/usuario/login';
 
   constructor(private http: HttpClient) { }
 
@@ -38,6 +39,28 @@ export class ApiService {
       console.log('Llamando a verificarUsuarioExiste con rut:', rut);
       // Aquí se hace el llamado a la API en el método GET y se retorna un objeto request
       const respuesta = await fetch(this.apiComprobarUsuario + rut);
+  
+      // Se valida si dio o no dio error
+      if (!respuesta.ok) {
+        // Aquí, en lugar de lanzar un error genérico, puedes lanzar un error específico que indique que el usuario no existe.
+        throw new Error('Usuario no encontrado');
+      }
+  
+      // Se cambian los datos retornados del objeto request a un JSON para que podamos manejarlos y se retornan
+      const datos = await respuesta.json();
+      return datos;
+    } catch (error) {
+      console.error('Error al verificar usuario:', error);
+      // Puedes retornar un valor específico o lanzar un error aquí según tus necesidades.
+      throw error;
+    }
+  }
+
+  async verificarLogin(rut: string, contra: string) {
+    try {
+      console.log('Llamando a verificarLogin con rut:', rut + contra);
+      // Aquí se hace el llamado a la API en el método GET y se retorna un objeto request
+      const respuesta = await fetch(`${this.apiLogin}/${rut}/${contra}`);
   
       // Se valida si dio o no dio error
       if (!respuesta.ok) {
