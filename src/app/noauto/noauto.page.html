@@ -1,35 +1,36 @@
 <!-- noauto.page.html -->
 
 <ion-header [translucent]="true">
-  <ion-toolbar color="secondary">
-    <ion-title>Selecciona tu destino</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Registro de Viaje</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<!-- <div #map id="map" style="height: 100%;"></div>
-  -->
-
 
 <ion-content [fullscreen]="true">
-  <ion-button expand="block" mat-raised-button color="primary" (click)="buscarConductor()">Comenzar a buscar</ion-button>
-
-  <!--<google-map [options]="options" (googleMapLoaded)="mapLoaded($event)"></google-map>
-
-  <ion-footer>
-    <ion-toolbar>
-      <ion-row>
-        <ion-col size="6">
-          <ion-searchbar (ionChange)="actualizarDestino($event)"></ion-searchbar>
-        </ion-col>
-        <ion-col size="6">
-          <ion-label>Tarifa estimada: {{ tarifaEstimada }} CLP</ion-label>
-        </ion-col>
-      </ion-row>
-    </ion-toolbar>
-  </ion-footer> -->
+  <form (ngSubmit)="registrarViaje()">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="apellido" name="apellido" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="correo" name="correo" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Origen</ion-label>
+      <ion-input type="text" [(ngModel)]="origen" name="origen" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Destino</ion-label>
+      <ion-input type="text" [(ngModel)]="destino" name="destino" required></ion-input>
+    </ion-item>
+    <ion-button expand="block" mat-raised-button color="primary" type="submit">Registrar Viaje</ion-button>
+  </form>
 </ion-content>
-
-
-
