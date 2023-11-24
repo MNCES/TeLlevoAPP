@@ -1,27 +1,23 @@
-//noauto.module.ts
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { GoogleMapsModule } from '@angular/google-maps';
+
+import { IonicModule } from '@ionic/angular';
+
+import { NoautoPageRoutingModule } from './noauto-routing.module';
 
 import { NoautoPage } from './noauto.page';
-import { NoautoRoutingModule } from './noauto-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ViajesService } from '../services/viajes.service';
 
 @NgModule({
-  declarations: [
-    NoautoPage,
-  ],
   imports: [
     CommonModule,
-    IonicModule,
     FormsModule,
-    GoogleMapsModule,
-    NoautoRoutingModule
+    IonicModule,HttpClientModule,
+    NoautoPageRoutingModule
   ],
-  exports: [
-   
-  ],
+  declarations: [NoautoPage],
+  providers: [ViajesService],
 })
 export class NoautoPageModule {}

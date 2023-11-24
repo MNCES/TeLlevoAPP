@@ -1,6 +1,6 @@
 //registro-usuario.page.ts
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular'; // Agregamos la importación del AlertController
 
@@ -9,7 +9,7 @@ import { AlertController, NavController } from '@ionic/angular'; // Agregamos la
   templateUrl: './registro-usuario.page.html',
   styleUrls: ['./registro-usuario.page.scss'],
 })
-export class RegistroUsuarioPage implements OnInit {
+export class RegistroUsuarioPage  {
   formularioRegistro: FormGroup;
 
   constructor(public fb: FormBuilder,
@@ -25,9 +25,6 @@ export class RegistroUsuarioPage implements OnInit {
 
   }
 
-
-  ngOnInit() {
-  }
 
   async guardar(){
     var reg = this.formularioRegistro.value;

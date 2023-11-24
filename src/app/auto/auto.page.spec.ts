@@ -1,6 +1,3 @@
-//auto.page.spec.ts 
-
-
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AutoPage } from './auto.page';
 

@@ -1,5 +1,3 @@
-//noauto.page.spec.ts
-
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoautoPage } from './noauto.page';
 

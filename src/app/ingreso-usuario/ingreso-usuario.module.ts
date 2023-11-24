@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+
+import { IonicModule } from '@ionic/angular';
+
+import { IngresoUsuarioPageRoutingModule } from './ingreso-usuario-routing.module';
 
 import { IngresoUsuarioPage } from './ingreso-usuario.page';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule,HttpClientModule,
     IonicModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: IngresoUsuarioPage
-      }
-    ])
+    IngresoUsuarioPageRoutingModule
   ],
-  declarations: [IngresoUsuarioPage]
+  declarations: [IngresoUsuarioPage],
+  providers: [ApiService],
 })
 export class IngresoUsuarioPageModule {}

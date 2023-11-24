@@ -16,8 +16,7 @@ export class PaginaInicioPage {
 
   constructor(public navCtrl: NavController, public alertController: AlertController) { }
 
-    ngOnInit() {
-    }
+    
   
   user = localStorage.getItem('usuario')
 

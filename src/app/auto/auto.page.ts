@@ -1,6 +1,6 @@
 //auto.page.html
 
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import {FormGroup,FormControl,Validators,FormBuilder} from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
 
@@ -12,7 +12,7 @@ import { AlertController, NavController } from '@ionic/angular';
   templateUrl: './auto.page.html',
   styleUrls: ['./auto.page.scss'],
 })
-export class AutoPage implements OnInit {
+export class AutoPage  {
   formularioRegistroauto: FormGroup;
 
 
@@ -29,8 +29,7 @@ export class AutoPage implements OnInit {
     });
 
   }
-  ngOnInit() {
-  }
+  
 
   async guardar(){
     var reg = this.formularioRegistroauto.value;

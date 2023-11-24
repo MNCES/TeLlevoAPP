@@ -1,8 +1,5 @@
-//restablecer-contrasena.page.spec.ts
-
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RestablecerContrasenaPage } from './restablecer-contrasena.page';
-
 
 describe('RestablecerContrasenaPage', () => {
   let component: RestablecerContrasenaPage;
@@ -18,6 +15,3 @@ describe('RestablecerContrasenaPage', () => {
     expect(component).toBeTruthy();
   });
 });
-
-
-

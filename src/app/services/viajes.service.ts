@@ -1,4 +1,3 @@
-//viajes.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
@@ -10,9 +9,10 @@ export class ViajesService {
   constructor(private http: HttpClient) {}
 
   registrarPasajero(datosPasajero: any) {
-    return this.http.post('URL_DEL_BACKEND_PARA_REGISTRAR', datosPasajero);
+    return this.http.post('https://g13be4d4999113d-qfojn116enmtuv5h.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/viaje/viaje', datosPasajero);
   }
 
+  
   simularRespuestaExitosa() {
     return new Observable((observer) => {
       setTimeout(() => {
